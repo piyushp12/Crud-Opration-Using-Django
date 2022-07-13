@@ -1,0 +1,11 @@
+body{
+    background-color: bisque;
+}
+
+.table-bordered{
+    border: solid;
+    border-radius: 12px;
+}
+.alert-warning{
+    border: salmon;
+}
