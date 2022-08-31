@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
-
+from django.urls import reverse_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'projectApp'
 ]
 
+AUTH_USER_MODEL = 'projectApp.MyUser'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,'templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -126,6 +128,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #added manaually
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    
+    os.path.join(BASE_DIR, "static"),
 ]
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = reverse_lazy("app:login")
+LOGOUT_URL = reverse_lazy("app:logout")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') # 'data' is my media folder
+MEDIA_URL = '/media/'

@@ -1,1 +1,92 @@
-<h1>Home</h1>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet"href="sign.css"> -->
+    <title> Signup</title>
+    <style>
+        body {
+            background-image: url("https://expertphotography.b-cdn.net/wp-content/uploads/2018/07/nature-photography-green-tree-plant-leaves.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            opacity: 100%;
+            border: 2px;
+        }
+
+        #sign {
+            font-size: xxx-large;
+            color: blueviolet;
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <form action="" <div class="container">
+            <h1 id="sign">
+                <center>Employess</center>
+            </h1>
+            <!-- {% for i in emp_data %}
+            <label id="user">Name</label>
+            <input type="text" Placeholder="Plz enter FullName" name="name" value="{{i.name}}" id="fullname"><br><br>
+            <label id="user">Mob Number</label>
+            <input type="number" Placeholder="Enter Mobile Number" name="number" id="number"> <br><br>
+            <label id="user">Sub</label>
+            <input type="text" Placeholder="Enter sub" name="sub" id="sub" value=""><br><br>
+            <label id="user">Domain</label>
+            <input type="text" Placeholder="Enter Domain" name="domain" id="domain"><br><br>
+            <label id="user">address</label>
+            <input type="text" Placeholder="Enter address" name="address" id="address"><br><br>
+            <label id="user">Password</label>
+            <input type="text" Placeholder="Plz Enter Password" id="password"> <br><br>
+            <label id="user">Conform Password</label>
+            <input type="text" Placeholder="Plz Enter Conform Password" id="c_pass"> -->
+            <!-- {% endfor %} -->
+      
+            
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" name="name" class="form-control" style="width:30%;" required="required"/>
+                <label for="lastname">sub</label>
+                <input type="text" name="sub" class="form-control" style="width:30%;" required="required"/>
+                <label for="lastname">Phone</label>
+                <input type="text" name="number" class="form-control" style="width:30%;" required="required"/>
+                <label for="lastname">Domain</label>
+                <input type="text" name="domain" class="form-control" style="width:30%;" required="required"/>
+                <label for="lastname">address</label>
+                <input type="text" name="address" class="form-control" style="width:30%;" required="required"/>
+                <!-- <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> ADD</button> -->
+                <button type="subit">Submit</button>
+            </div>
+        </form>
+        <br />
+        <h3>Read</h3>
+        <table class="table table-bordered">
+            <thead class="alert-warning">
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>First Name</th>
+                    <th>Sub</th>
+                    <th>Phone</th>
+                    <th>Domain</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in emp_data %}
+                <tr>
+                    <!-- <td>{{ db.id }}</td> -->
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.sub }}</td>
+                    <td>{{ i.number }}</td>
+                    <td>{{ i.domain }}</td>
+                    <td>{{ i.address }}</td>
+                    <!-- <td><a class="btn btn-sm btn-warning" href="update/{{ db.id }}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a class="btn btn-sm btn-danger" href="delete/{{ db.id }}"><span class="glyphicon glyphicon-trash"></span> Delete</a></td> -->
+                </tr>
+                {% endfor %}
+            </tbody>
+    </center>
+    </form>
